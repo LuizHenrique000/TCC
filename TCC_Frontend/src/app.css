@@ -1,0 +1,49 @@
+p {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  
+}
+
+.header {
+    border-radius: 5px;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: gainsboro;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.card-dia {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: beige;
+}
+
+.sentido {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: bisque;
+}
+
+ /* .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+} */
+
+.card-horario {
+    border-radius: 5px;
+    width: 50px;
+    margin-left: 10px;
+   
+} 
+
