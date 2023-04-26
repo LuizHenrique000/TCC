@@ -4,46 +4,48 @@
 }
 
 .container {
+    height: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://cdn.wallpapersafari.com/93/71/Lw8e4a.jpg");
-    background-repeat: no-repeat;
 }
 
 .card_login {
     display: flex;
     flex-direction: column;
-    align-items: start;
     background-color: #FFFFFF6B;
     width: 375px;
     height: 383px;
     border-radius: 5px;
 }
 
-.input_email, .input_senha {
+.input_email,
+.input_senha {
+    background-color: #D9D9D9;
     width: 95%;
-    height: 40px;
+    height: 54px;
     margin: 5px;
-    padding-left: 2%;
     border-radius: 5px;
     text-decoration: none;
     border: none;
     outline: none;
-    border: solid black 1px;
 }
 
 .botao_login {
     width: 95%;
     height: 40px;
     border-radius: 5px;
+    margin: 5px;
     text-decoration: none;
     border: none;
     outline: none;
     background: #000000;
     color: white;
-    font-weight: bold;
+    font-weight: 100;
     font-size: 20px;
 }
+
+.botao_login:active {
+    background: #111111;
+    transform: translateY(2px); /* animação de pressionar o botão */
+  }
