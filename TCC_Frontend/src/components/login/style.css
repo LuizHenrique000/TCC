@@ -30,10 +30,12 @@
 .cadastro {
     text-decoration: none;
     color: #000000;
-    font-size: 20px;
+    font-size: 19px;
     position: relative;
     right: 90px;
     top: 20px;
+    background: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .input_email::placeholder {
@@ -71,7 +73,17 @@
     font-size: 20px;
 }
 
+.cadastro:hover {
+    color: #111111;
+    cursor: pointer;
+}
+
 .botao_login:active {
     background: #111111;
     transform: translateY(2px); 
-  }
+}
+
+.botao_login:hover {
+    background: #111111;
+    cursor: pointer;
+}
