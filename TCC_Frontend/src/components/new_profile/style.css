@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_nome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF6B;
+    width: 375px;
+    height: 383px;
+    border-radius: 5px;
+}
+
+.nome, 
+.email,
+.senha {
+    padding: 30px 30px 0px 30px;
+
+}
+
+.input_nome::placeholder {
+    color: #000000;
+}
+
+.input_email::placeholder {
+    color: #000000;
+}
+
+.input_senha::placeholder {
+    color: #000000;
+}
+
+.botao_salvar {
+   margin-top: 20px;
+    width: 317px;
+    height: 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background: #000000;
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.input_nome,
+.input_email,
+.input_senha {
+    padding-left: 20px;
+    background-color: #D9D9D9;
+    width: 317px;
+    height: 54px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.botao_salvar:active {
+    background: #111111;
+    transform: translateY(2px); 
+  }
+
+.toast-loading {
+    background-color: red;
+    color: white;
+}
