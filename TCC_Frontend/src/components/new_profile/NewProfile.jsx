@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 import './style.css';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function NewProfile() {
+
+    const history = useNavigate();
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
     const saveUser = async () => {
-        if (validateUser() === false) return
-        const user = { name: nome, email: email, password: senha }
-        await axios.post("http://localhost:8080/api/v1/user", user)
+        await axios.post('http://localhost:8080/api/v1/user', {
+            name: nome,
+            email: email,
+            password: senha
+        })
             .then(() => {
                 alert('Usuário cadastrado com sucesso!')
-                window.location.href = '/login'
+                history('/')
+            }).catch(() => {
+                alert('Erro ao cadastrar usuário!')
             })
     }
 
@@ -24,6 +31,22 @@ export default function NewProfile() {
             return false
         }
     }
+
+    // const validateIfUserExists = async () => {
+    //     await axios.get(`http://localhost:8080/api/v1/user?`,
+    //      { 
+    //         params:
+    //          { 
+    //             email: email, 
+    //             password: senha 
+    //         } 
+    //     }).then((response) => {
+    //         if (response){
+    //             alert('Usuário já cadastrado!')
+    //             return false
+    //         }
+    //     })
+    // }
 
     return (
         <div className='container'>
