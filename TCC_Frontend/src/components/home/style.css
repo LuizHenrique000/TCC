@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.search-box {
+    margin: 5px;
+    height: 60px;
+}
+
+.search-bar {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 20px;
+} 
+
+
+.horarios {
+    margin-left: 10px;
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: aliceblue;
+}
+
+
