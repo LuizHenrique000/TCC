@@ -37,9 +37,7 @@ a {
 
 .card-container {
     margin-top: 80px;
-    width: 383px;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
 }
 

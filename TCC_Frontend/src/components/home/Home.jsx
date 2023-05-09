@@ -34,6 +34,10 @@ export default function Home() {
         }
     ]
 
+    const a = () => {
+        return window.alert("Clicado!")
+    }
+
     // useEffect(() => {
     //     const fetchBus = async () => {
     //         try {
@@ -55,7 +59,7 @@ export default function Home() {
             </div>
             <div className='card-container'>
                 {bus.map((bus) => (
-                    <div className='card-horario'>
+                    <div className='card-horario' onClick={a}>
                     <div className='color-icon'></div>    
                     <p className='linha'>{bus.linha}</p>
                     </div>
