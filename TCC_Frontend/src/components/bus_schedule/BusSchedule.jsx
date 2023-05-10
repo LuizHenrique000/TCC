@@ -1,6 +1,5 @@
-import './style.css';
-
-
+import { getHorarios } from '../../services/api';
+import './schedule.css';
 
 export default function BusSchedule() {
 
@@ -9,17 +8,6 @@ export default function BusSchedule() {
     const sabado = ['06:30', '06:45', '07:00', '07:15', '07:30', '08:00', '08:30', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00']
 
     const domingo = ['07:15', '07:45', '10:15', '10:45', '12:00', '15:00', '15:30', '18:30', '19:30', '21:15']
-
-    // const verifyDate = (item) => {
-    //     const hour = new Date().getHours()
-    //     const minute = new Date().getMinutes()
-    //     const time = `${hour}:${minute}`
-    //     if (item === time) {
-    //         return true
-    //     }   else {
-    //         return false
-    //     }
-    // }
 
     return (
         <div className='schedule-container'>
@@ -36,8 +24,7 @@ export default function BusSchedule() {
                             <div className={`horario1`}>
                                 <p>{item}</p>
                             </div>
-                        )
-                    }
+                        )}
                     )}
                 </div>
                 <div className='sentido'>
@@ -49,15 +36,10 @@ export default function BusSchedule() {
                             <div className='horario2'>
                                 <p>{item}</p>
                             </div>
-                        )
-                    }
+                        )}
                     )}
                 </div>
             </div>
-
-            
-
-
             <div className='schedule-saturday'>
                 <div className='day'>
                     <p>Sábado</p>
@@ -71,8 +53,7 @@ export default function BusSchedule() {
                             <div className={`horario1`}>
                                 <p>{item}</p>
                             </div>
-                        )
-                    }
+                        )}
                     )}
                 </div>
                 <div className='sentido'>
@@ -84,11 +65,9 @@ export default function BusSchedule() {
                             <div className='horario2'>
                                 <p>{item}</p>
                             </div>
-                        )
-                    }
+                        )}
                     )}
                 </div>
-                
             </div>
             <div className='schedule-sunday'>
                 <div className='day'>
@@ -103,8 +82,7 @@ export default function BusSchedule() {
                             <div className={`horario1`}>
                                 <p>{item}</p>
                             </div>
-                        )
-                    }
+                        )}
                     )}
                 </div>
                 <div className='sentido'>
@@ -116,8 +94,7 @@ export default function BusSchedule() {
                             <div className='horario2'>
                                 <p>{item}</p>
                             </div>
-                        )
-                    }
+                        )}
                     )}
                 </div>
             </div>
