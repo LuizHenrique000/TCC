@@ -42,6 +42,7 @@
     color: #000000;
 }
 
+
 .input_senha::placeholder {
     color: #000000;
 }
@@ -71,6 +72,27 @@
     border: none;
     outline: none;
     font-size: 20px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.input_email:hover {
+    background-color: #FFFFFF6B;
+    cursor: pointer;
+}
+
+.input_email:focus::placeholder {
+    color: transparent;
+    transition: color 0.3s ease-in-out;
+}
+
+.input_senha:hover {
+    background-color: #FFFFFF6B;
+    cursor: pointer;
+}
+
+.input_senha:focus::placeholder {
+    color: transparent;
+    transition: color 0.3s ease-in-out;
 }
 
 .cadastro:hover {
@@ -85,5 +107,15 @@
 
 .botao_login:hover {
     background: #111111;
+    cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.link:hover {
+    color: #111111;
     cursor: pointer;
 }

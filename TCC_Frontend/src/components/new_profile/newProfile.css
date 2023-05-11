@@ -27,8 +27,19 @@
 
 }
 
+
 .input_nome::placeholder {
     color: #000000;
+}
+
+.input_nome:focus::placeholder {
+    color: transparent;
+    transition: color 0.3s ease-in-out;
+}
+
+.input_nome:hover {
+    background-color: #FFFFFF6B;
+    cursor: pointer;
 }
 
 .input_email::placeholder {
@@ -66,6 +77,7 @@
     border: none;
     outline: none;
     font-size: 20px;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .botao_salvar:active {
