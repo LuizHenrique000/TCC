@@ -4,8 +4,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from 'react-hot-toast';
+import { useAuthContext } from '../../context/AuthContext';
 
 export default function Login() {
+
+    const { isLoggedIn, setIsLoggedIn } = useAuthContext();
 
     const history = useNavigate();
     const [email, setEmail] = useState('');
@@ -35,6 +38,7 @@ export default function Login() {
                 );
 
                 if (data) {
+                    setIsLoggedIn(true);
                     setTimeout(() => {
                         history('/home');
                     }, 2000);

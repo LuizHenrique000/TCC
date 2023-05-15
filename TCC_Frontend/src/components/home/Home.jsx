@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './home.css'
-import axios from 'axios';
 import { BsSearch } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
+import { useAuthContext } from '../../context/AuthContext';
 
 export default function Home() {
+
+    const { isLoggedIn, setIsLoggedIn } = useAuthContext();
 
     const history = useNavigate();
 
@@ -36,8 +38,14 @@ export default function Home() {
     ]
 
     const goToSchedule = () => {
-       history('/schedule');
+        history('/schedule');
     }
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+            history('/');
+        }
+    }, [isLoggedIn, history]);
 
     return (
         <>
@@ -48,8 +56,8 @@ export default function Home() {
             <div className='card-container'>
                 {bus.map((bus) => (
                     <div className='card-horario' onClick={goToSchedule}>
-                    <div className='color-icon'></div>    
-                    <p className='linha'>{bus.linha}</p>
+                        <div className='color-icon'></div>
+                        <p className='linha'>{bus.linha}</p>
                     </div>
                 ))}
             </div>

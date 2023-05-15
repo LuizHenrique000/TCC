@@ -1,13 +1,26 @@
+import { useNavigate } from 'react-router-dom';
+import { useAuthContext } from '../../context/AuthContext';
 import { getHorarios } from '../../services/api';
 import './schedule.css';
+import { useEffect } from 'react';
 
 export default function BusSchedule() {
+
+    const { isLoggedIn, setIsLoggedIn } = useAuthContext();
+    const history = useNavigate();
 
     const diaUtil = ['07:30', '08:30', '09:15', '10:00', '10:45', '11:00', '12:45', '13:15', '13:45', '14:15', '14:45', '15:00', '15:45', '16:15', '17:00', '17:30', '19:15', '19:45', '21:00', '21:30']
 
     const sabado = ['06:30', '06:45', '07:00', '07:15', '07:30', '08:00', '08:30', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00']
 
     const domingo = ['07:15', '07:45', '10:15', '10:45', '12:00', '15:00', '15:30', '18:30', '19:30', '21:15']
+
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+            history('/');
+        }
+    }, [isLoggedIn, history]);
 
     return (
         <div className='schedule-container'>
