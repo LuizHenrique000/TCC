@@ -1,17 +1,18 @@
 .schedule-container {
     display: flex;
     flex-wrap: wrap;
-}
-
-.schedule-week {
+    justify-content: space-between;
+  }
+  
+  .schedule-week, .schedule-saturday, .schedule-sunday {
     margin: 30px;
     height: 550px;
     width: 300px;
-    background-color: #Ffffff;
+    background-color: #FFFFFF;
     border-radius: 5px;
-}
-
-.CB {
+  }
+  
+  .CB, .BC {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 20px;
@@ -19,63 +20,32 @@
     margin-bottom: 30px;
     padding-left: 10px;
     border-radius: 5px;
-}
-
-.horario1 {
+  }
+  
+  .horario1, .horario2 {
     display: flex;
     padding-left: 10px;
     margin: 5px;
-}
-
-.BC {
-    display: flex;
-    flex-wrap: wrap; 
-    background-color: #D9D9D9;
-    padding-bottom: 20px;
-    border-radius: 5px;
-}
-
-.horario2 {
-    display: flex;
-    padding-left: 10px;
-    margin: 5px;
-}
-
-.day {
+  }
+  
+  .day {
     height: 50px;
     width: 300px;
-    background-color: #Ffffff;
+    background-color: #FFFFFF;
     border-radius: 5px;
     text-align: center;
-}
-
-.sentido {
+  }
+  
+  .sentido {
     position: relative;
     bottom: 10px;
     outline: none;
     border-radius: 5px;
-}
-
-/* p {
-    font-size: 20px; 
+  }
+  
+  .schedule-week p, .schedule-saturday p, .schedule-sunday p {
+    font-size: 20px;
     position: relative;
     top: 10px;
-} */
-
-.schedule-saturday{
-    margin: 30px;
-    height: 550px;
-    width: 300px;
-    background-color: #Ffffff;
-    border-radius: 5px;
-}
-
-
-.schedule-sunday {
-    margin: 30px;
-    height: 550px;
-    width: 300px;
-    background-color: #Ffffff;
-    border-radius: 5px;
-}
-
+  }
+  

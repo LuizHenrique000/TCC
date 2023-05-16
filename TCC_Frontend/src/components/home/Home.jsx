@@ -3,42 +3,23 @@ import './home.css'
 import { BsSearch } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
+import { busLine } from '../../resources/bus';
+import { useBusContext } from '../../context/BusContext';
 
 export default function Home() {
 
-    const { isLoggedIn, setIsLoggedIn } = useAuthContext();
-
+    const { isLoggedIn } = useAuthContext();
     const history = useNavigate();
-
-    const bus = [
-        {
-            id: 1,
-            linha: 'T12 - Restinga'
-        },
-        {
-            id: 2,
-            linha: 'T13 - Campus'
-        },
-        {
-            id: 3,
-            linha: 'T11 - Aeroporto'
-        },
-        {
-            id: 1,
-            linha: 'T12 - Restinga'
-        },
-        {
-            id: 2,
-            linha: 'T13 - Campus'
-        },
-        {
-            id: 3,
-            linha: 'T11 - Aeroporto'
-        }
-    ]
+    const { bus, setBus } = useBusContext();
 
     const goToSchedule = () => {
         history('/schedule');
+    }
+
+    const handleClick = (e) => {
+        if (e.key === 'Enter') {
+            goToSchedule();
+        }
     }
 
     useEffect(() => {
@@ -51,10 +32,13 @@ export default function Home() {
         <>
             <div className='search-box'>
                 <BsSearch className='icon-search' />
-                <input type='text' className='input-search' placeholder='Digite um ônibus'></input>
+                <input type='text' className='input-search' placeholder='Digite um ônibus' 
+                onChange={(e) => {setBus(e.target.value)}}
+                onKeyDown={(e) => {() => handleClick(e)}}
+                ></input>
             </div>
             <div className='card-container'>
-                {bus.map((bus) => (
+                {busLine.map((bus) => (
                     <div className='card-horario' onClick={goToSchedule}>
                         <div className='color-icon'></div>
                         <p className='linha'>{bus.linha}</p>
