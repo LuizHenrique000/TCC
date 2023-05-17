@@ -1,11 +1,11 @@
 .schedule-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
   }
   
   .schedule-week, .schedule-saturday, .schedule-sunday {
-    margin: 30px;
+    margin: 20px;
     height: 550px;
     width: 300px;
     background-color: #FFFFFF;

@@ -21,7 +21,7 @@ export default function NewProfile() {
         } else {
             try {
                 await toast.promise(
-                    axios.post('http://localhost:8080/api/v1/user', {
+                    axios.post('https://tcc-backend.herokuapp.com/api/v1/user', {
                         name: nome,
                         email: email,
                         password: senha
@@ -51,8 +51,8 @@ export default function NewProfile() {
 
     const verifyIfUserAlreadyExists = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8080/api/v1/user?email=${email}&password=${senha}`);
-            if (data) {
+            const { data } = await axios.get(`https://tcc-backend.herokuapp.com/api/v1/user?email=${email}&password=${senha}`);
+            if (data.length > 0) {
                 return true
             }
             return false

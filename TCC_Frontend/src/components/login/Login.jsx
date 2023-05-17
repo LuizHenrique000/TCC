@@ -8,51 +8,42 @@ import { useAuthContext } from '../../context/AuthContext';
 
 export default function Login() {
 
-    const { isLoggedIn, setIsLoggedIn } = useAuthContext();
+    const { setIsLoggedIn } = useAuthContext();
 
     const history = useNavigate();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-    const showToast = (status) => {
-        if (!!status) {
-            toast.success('Login realizado com sucesso!', { duration: 2000 });
-        } else {
-            toast.error('Não foi possível fazer o login.', { duration: 2000 })
-        }
-    };
-
     const logar = async () => {
         if (!validateUser()) {
-            return toast.error('Preencha todos os campos.', { duration: 2000 })
+          return toast.error('Preencha todos os campos.', { duration: 2000 });
         } else {
             try {
-                const { data } = await toast.promise(
-                    axios.get(`http://localhost:8080/api/v1/user?email=${email}&password=${senha}`),
-                    {
-                        pending: 'Aguarde enquanto estamos realizando o login...',
-                        error: 'Não foi possível fazer o login.',
-                        success: 'Login realizado com sucesso!',
-                        duration: 2000
-                    }
-                );
-
-                if (data) {
+                const { data } = await axios.get(`https://tcc-backend.herokuapp.com/api/v1/user?email=${email}&password=${senha}`);
+                if (!validateResponse(data)) {
+                    return toast.error('Usuário não encontrado.', { duration: 2000 });
+                } else {
                     setIsLoggedIn(true);
+                    toast.success('Login realizado com sucesso.', { duration: 2000 });
                     setTimeout(() => {
                         history('/home');
                     }, 2000);
-                } else {
-                    showToast(false);
                 }
             } catch (error) {
-                console.log(error);
+               return toast.error('Não foi possível fazer o login.', { duration: 2000 });
             }
         };
     };
 
     const validateUser = () => {
         if (email === '' || senha === '') {
+            return false
+        }
+        return true
+    }
+
+    const validateResponse = (data) => {
+        if (data.length === 0) {
             return false
         }
         return true
